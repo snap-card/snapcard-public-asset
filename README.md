@@ -1,0 +1,1 @@
+# snapcard-public-asset
