@@ -1,0 +1,12 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Centered logo mark for Auth0 Universal Login -->
+  <rect x="36" y="36" width="128" height="128" rx="32" fill="url(#al)"/>
+  <path d="M76 84C76 79.5817 79.5817 76 84 76H116C120.418 76 124 79.5817 124 84V116C124 120.418 120.418 124 116 124H84C79.5817 124 76 120.418 76 116V84Z" fill="white" fill-opacity="0.9"/>
+  <path d="M90 92H110M90 104H100" stroke="url(#al)" stroke-width="6" stroke-linecap="round"/>
+  <defs>
+    <linearGradient id="al" x1="36" y1="36" x2="164" y2="164" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0D9488"/>
+      <stop offset="1" stop-color="#0F766E"/>
+    </linearGradient>
+  </defs>
+</svg>

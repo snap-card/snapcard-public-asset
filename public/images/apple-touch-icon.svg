@@ -1,0 +1,12 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Apple Touch Icon - full bleed rounded square -->
+  <rect width="180" height="180" rx="40" fill="url(#at)"/>
+  <path d="M56.25 67.5C56.25 61.9772 60.7272 57.5 66.25 57.5H113.75C119.273 57.5 123.75 61.9772 123.75 67.5V112.5C123.75 118.023 119.273 122.5 113.75 122.5H66.25C60.7272 122.5 56.25 118.023 56.25 112.5V67.5Z" fill="white" fill-opacity="0.9"/>
+  <path d="M78.75 78.75H101.25M78.75 95.625H90" stroke="url(#at)" stroke-width="8.44" stroke-linecap="round"/>
+  <defs>
+    <linearGradient id="at" x1="0" y1="0" x2="180" y2="180" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0D9488"/>
+      <stop offset="1" stop-color="#0F766E"/>
+    </linearGradient>
+  </defs>
+</svg>
