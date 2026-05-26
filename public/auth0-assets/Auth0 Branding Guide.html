@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SnapCard — Auth0 Branding Assets</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #F8FAFC;
+      color: #0F172A;
+      padding: 48px 24px 80px;
+      min-height: 100vh;
+    }
+
+    .page {
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    /* ── Header ── */
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .header-logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #0D9488, #0F766E);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .header-logo svg { display: block; }
+    .header-text h1 {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: #0F172A;
+    }
+    .header-text p {
+      font-size: 14px;
+      color: #64748B;
+      margin-top: 2px;
+    }
+
+    /* ── Section card ── */
+    .card {
+      background: #fff;
+      border: 1px solid #E2E8F0;
+      border-radius: 16px;
+      padding: 28px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .card-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #64748B;
+    }
+    .card-title .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #0D9488;
+      flex-shrink: 0;
+    }
+
+    /* ── Color rows ── */
+    .color-rows {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .color-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .swatch {
+      width: 56px;
+      height: 56px;
+      border-radius: 10px;
+      border: 1px solid rgba(0,0,0,0.08);
+      flex-shrink: 0;
+    }
+    .color-info { flex: 1; }
+    .color-label {
+      font-size: 15px;
+      font-weight: 600;
+      color: #0F172A;
+    }
+    .color-desc {
+      font-size: 13px;
+      color: #64748B;
+      margin-top: 2px;
+    }
+    .color-chip {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 500;
+      background: #F1F5F9;
+      color: #334155;
+      border: 1px solid #E2E8F0;
+      border-radius: 6px;
+      padding: 5px 12px;
+      cursor: pointer;
+      transition: background 120ms;
+      white-space: nowrap;
+      user-select: all;
+    }
+    .color-chip:hover { background: #E2E8F0; }
+    .copied {
+      font-size: 11px;
+      color: #0D9488;
+      font-weight: 600;
+      opacity: 0;
+      transition: opacity 200ms;
+      width: 48px;
+      text-align: right;
+    }
+    .copied.show { opacity: 1; }
+
+    /* ── Logo grid ── */
+    .logo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 16px;
+    }
+    .logo-card {
+      border: 1px solid #E2E8F0;
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .logo-preview {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      flex: 1;
+    }
+    .logo-preview.bg-white  { background: #fff; }
+    .logo-preview.bg-teal   { background: linear-gradient(135deg, #0D9488, #0F766E); }
+    .logo-preview.bg-slate  { background: #F8FAFC; }
+    .logo-preview.bg-dark   { background: #0F172A; }
+    .logo-preview img { max-width: 100%; max-height: 80px; display: block; object-fit: contain; }
+    .logo-footer {
+      padding: 10px 14px;
+      background: #F8FAFC;
+      border-top: 1px solid #E2E8F0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .logo-name {
+      font-size: 12px;
+      font-weight: 600;
+      color: #334155;
+    }
+    .logo-size {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: #94A3B8;
+    }
+    .download-btn {
+      font-size: 11px;
+      font-weight: 600;
+      color: #0D9488;
+      text-decoration: none;
+      padding: 4px 8px;
+      border: 1px solid #CCFBF1;
+      border-radius: 5px;
+      background: #F0FDFA;
+      transition: background 120ms;
+      white-space: nowrap;
+    }
+    .download-btn:hover { background: #CCFBF1; }
+
+    /* ── Summary table ── */
+    .summary-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .summary-table th,
+    .summary-table td {
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid #F1F5F9;
+      font-size: 14px;
+    }
+    .summary-table th {
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #94A3B8;
+      background: #F8FAFC;
+    }
+    .summary-table td:first-child { color: #475569; font-weight: 500; }
+    .summary-table td:last-child {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 500;
+      color: #0F172A;
+    }
+    .summary-table tr:last-child td { border-bottom: none; }
+
+    /* ── Badge ── */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 9px;
+      border-radius: 999px;
+      letter-spacing: 0.02em;
+    }
+    .badge-teal { background: #CCFBF1; color: #0F766E; }
+    .badge-coral { background: #FFEDD5; color: #C2410C; }
+    .badge-slate { background: #F1F5F9; color: #475569; }
+
+    /* ── Auth0 field callout ── */
+    .field-callout {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: #F0FDFA;
+      border: 1px solid #CCFBF1;
+      border-radius: 10px;
+      padding: 14px 16px;
+    }
+    .field-callout-icon {
+      font-size: 18px;
+      line-height: 1;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .field-callout-body { flex: 1; }
+    .field-callout-body strong {
+      font-size: 13px;
+      font-weight: 700;
+      color: #0F766E;
+    }
+    .field-callout-body p {
+      font-size: 13px;
+      color: #475569;
+      margin-top: 3px;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-logo">
+      <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 12C10 10.8954 10.8954 10 12 10H20C21.1046 10 22 10.8954 22 12V20C22 21.1046 21.1046 22 20 22H12C10.8954 22 10 21.1046 10 20V12Z" fill="white" fill-opacity="0.9"/>
+        <path d="M14 14H18M14 17H16" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="header-text">
+      <h1>SnapCard — Auth0 Branding Assets</h1>
+      <p>Logos, colors, and field values ready to paste into Auth0 Branding settings</p>
+    </div>
+  </div>
+
+  <!-- Colors -->
+  <div class="card">
+    <div class="card-title"><span class="dot"></span>Brand Colors</div>
+
+    <div class="color-rows">
+
+      <div class="color-row">
+        <div class="swatch" style="background:#0D9488;"></div>
+        <div class="color-info">
+          <div class="color-label">Primary Color <span class="badge badge-teal">Auth0: Primary Color</span></div>
+          <div class="color-desc">Ocean Teal — buttons, links, highlights</div>
+        </div>
+        <span class="color-chip" onclick="copyColor(this,'#0D9488')">#0D9488</span>
+        <span class="copied" id="c1"></span>
+      </div>
+
+      <div class="color-row">
+        <div class="swatch" style="background:#F97316;"></div>
+        <div class="color-info">
+          <div class="color-label">Secondary / Accent Color <span class="badge badge-coral">Auth0: Action Color</span></div>
+          <div class="color-desc">Coral — calls-to-action, badges, emphasis</div>
+        </div>
+        <span class="color-chip" onclick="copyColor(this,'#F97316')">#F97316</span>
+        <span class="copied" id="c2"></span>
+      </div>
+
+      <div class="color-row">
+        <div class="swatch" style="background:#F8FAFC; border:1px solid #E2E8F0;"></div>
+        <div class="color-info">
+          <div class="color-label">Background Color <span class="badge badge-slate">Auth0: Background</span></div>
+          <div class="color-desc">Slate 50 — page background</div>
+        </div>
+        <span class="color-chip" onclick="copyColor(this,'#F8FAFC')">#F8FAFC</span>
+        <span class="copied" id="c3"></span>
+      </div>
+
+      <div class="color-row">
+        <div class="swatch" style="background:#FFFFFF; border:1px solid #E2E8F0;"></div>
+        <div class="color-info">
+          <div class="color-label">Widget / Card Background</div>
+          <div class="color-desc">White — login box / widget surface</div>
+        </div>
+        <span class="color-chip" onclick="copyColor(this,'#FFFFFF')">#FFFFFF</span>
+        <span class="copied" id="c4"></span>
+      </div>
+
+      <div class="color-row">
+        <div class="swatch" style="background:#0F172A;"></div>
+        <div class="color-info">
+          <div class="color-label">Text / Foreground</div>
+          <div class="color-desc">Slate 900 — headings, body text</div>
+        </div>
+        <span class="color-chip" onclick="copyColor(this,'#0F172A')">#0F172A</span>
+        <span class="copied" id="c5"></span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Auth0 field mapping -->
+  <div class="card">
+    <div class="card-title"><span class="dot"></span>Auth0 Dashboard Field Mapping</div>
+
+    <div class="field-callout">
+      <div class="field-callout-icon">📍</div>
+      <div class="field-callout-body">
+        <strong>Where to find this in Auth0</strong>
+        <p>Auth0 Dashboard → Branding → Universal Login → Colors tab. Paste the hex values below directly into each field.</p>
+      </div>
+    </div>
+
+    <table class="summary-table">
+      <thead>
+        <tr>
+          <th>Auth0 Field</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Primary Color</td>
+          <td onclick="copyTableCell(this)" style="cursor:pointer" title="Click to copy">#0D9488</td>
+        </tr>
+        <tr>
+          <td>Page Background Color</td>
+          <td onclick="copyTableCell(this)" style="cursor:pointer" title="Click to copy">#F8FAFC</td>
+        </tr>
+        <tr>
+          <td>Widget Background Color</td>
+          <td onclick="copyTableCell(this)" style="cursor:pointer" title="Click to copy">#FFFFFF</td>
+        </tr>
+        <tr>
+          <td>Widget Corner Radius</td>
+          <td>16px</td>
+        </tr>
+        <tr>
+          <td>Button Border Radius</td>
+          <td>8px</td>
+        </tr>
+        <tr>
+          <td>Font Family</td>
+          <td>Inter</td>
+        </tr>
+        <tr>
+          <td>Logo URL</td>
+          <td>Upload icon-512.png (see below)</td>
+        </tr>
+        <tr>
+          <td>Favicon</td>
+          <td>Upload icon-256.png (see below)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Logos -->
+  <div class="card">
+    <div class="card-title"><span class="dot"></span>Logo Files</div>
+
+    <div class="logo-grid">
+
+      <div class="logo-card">
+        <div class="logo-preview bg-white">
+          <img src="icon-512.png" alt="Playful Icon 512" />
+        </div>
+        <div class="logo-footer">
+          <div>
+            <div class="logo-name">Icon (Playful)</div>
+            <div class="logo-size">512 × 512 · PNG</div>
+          </div>
+          <a class="download-btn" href="icon-512.png" download="snapcard-icon-512.png">↓ PNG</a>
+        </div>
+      </div>
+
+      <div class="logo-card">
+        <div class="logo-preview bg-white">
+          <img src="icon-256.png" alt="Playful Icon 256" />
+        </div>
+        <div class="logo-footer">
+          <div>
+            <div class="logo-name">Icon (Playful)</div>
+            <div class="logo-size">256 × 256 · PNG</div>
+          </div>
+          <a class="download-btn" href="icon-256.png" download="snapcard-icon-256.png">↓ PNG</a>
+        </div>
+      </div>
+
+      <div class="logo-card">
+        <div class="logo-preview bg-white">
+          <img src="logo-mark-200.png" alt="Teal Logo Mark" />
+        </div>
+        <div class="logo-footer">
+          <div>
+            <div class="logo-name">Mark (Teal)</div>
+            <div class="logo-size">200 × 200 · PNG</div>
+          </div>
+          <a class="download-btn" href="logo-mark-200.png" download="snapcard-logo-mark-200.png">↓ PNG</a>
+        </div>
+      </div>
+
+      <div class="logo-card">
+        <div class="logo-preview bg-teal">
+          <img src="logo-mark-200.png" alt="Teal Logo Mark on teal bg" />
+        </div>
+        <div class="logo-footer">
+          <div>
+            <div class="logo-name">Mark on Teal</div>
+            <div class="logo-size">200 × 200 · PNG</div>
+          </div>
+          <a class="download-btn" href="logo-mark-200.png" download="snapcard-logo-mark-200.png">↓ PNG</a>
+        </div>
+      </div>
+
+      <div class="logo-card">
+        <div class="logo-preview bg-slate" style="padding: 20px 12px;">
+          <img src="wordmark-640.png" alt="Wordmark" style="max-height:56px;" />
+        </div>
+        <div class="logo-footer">
+          <div>
+            <div class="logo-name">Wordmark</div>
+            <div class="logo-size">640 × 160 · PNG</div>
+          </div>
+          <a class="download-btn" href="wordmark-640.png" download="snapcard-wordmark-640.png">↓ PNG</a>
+        </div>
+      </div>
+
+      <div class="logo-card">
+        <div class="logo-preview bg-dark" style="padding: 20px 12px;">
+          <img src="wordmark-640.png" alt="Wordmark on dark" style="max-height:56px;" />
+        </div>
+        <div class="logo-footer">
+          <div>
+            <div class="logo-name">Wordmark (dark bg)</div>
+            <div class="logo-size">640 × 160 · PNG</div>
+          </div>
+          <a class="download-btn" href="wordmark-640.png" download="snapcard-wordmark-640.png">↓ PNG</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SVG sources -->
+  <div class="card">
+    <div class="card-title"><span class="dot"></span>SVG Sources (editable)</div>
+    <div class="logo-grid">
+      <div class="logo-card">
+        <div class="logo-preview bg-white">
+          <img src="icon.svg" alt="Icon SVG" style="max-height:80px;" />
+        </div>
+        <div class="logo-footer">
+          <div>
+            <div class="logo-name">Icon</div>
+            <div class="logo-size">SVG · scalable</div>
+          </div>
+          <a class="download-btn" href="icon.svg" download="snapcard-icon.svg">↓ SVG</a>
+        </div>
+      </div>
+      <div class="logo-card">
+        <div class="logo-preview bg-white">
+          <img src="logo-mark.svg" alt="Logo Mark SVG" style="max-height:80px;" />
+        </div>
+        <div class="logo-footer">
+          <div>
+            <div class="logo-name">Mark (Teal)</div>
+            <div class="logo-size">SVG · scalable</div>
+          </div>
+          <a class="download-btn" href="logo-mark.svg" download="snapcard-logo-mark.svg">↓ SVG</a>
+        </div>
+      </div>
+      <div class="logo-card">
+        <div class="logo-preview bg-slate" style="padding: 20px 12px;">
+          <img src="wordmark.svg" alt="Wordmark SVG" style="max-height:56px;" />
+        </div>
+        <div class="logo-footer">
+          <div>
+            <div class="logo-name">Wordmark</div>
+            <div class="logo-size">SVG · scalable</div>
+          </div>
+          <a class="download-btn" href="wordmark.svg" download="snapcard-wordmark.svg">↓ SVG</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function copyColor(el, hex) {
+    navigator.clipboard.writeText(hex).then(() => {
+      // find the sibling .copied span
+      const copied = el.nextElementSibling;
+      copied.textContent = '✓ copied';
+      copied.classList.add('show');
+      setTimeout(() => copied.classList.remove('show'), 1800);
+    });
+  }
+  function copyTableCell(td) {
+    const val = td.textContent.trim();
+    navigator.clipboard.writeText(val).then(() => {
+      const orig = td.textContent;
+      td.textContent = '✓ Copied!';
+      td.style.color = '#0D9488';
+      setTimeout(() => { td.textContent = orig; td.style.color = ''; }, 1500);
+    });
+  }
+</script>
+</body>
+</html>
