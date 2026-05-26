@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/values/colors.xml — SnapCard brand color tokens for Android -->
+<resources>
+    <color name="ic_launcher_background">#FFFBEB</color>
+    <color name="brand_paper">#FFFBEB</color>
+    <color name="brand_ink">#0F172A</color>
+    <color name="brand_coral">#FB7185</color>
+    <color name="brand_yellow">#FDE047</color>
+    <color name="brand_mint">#6EE7B7</color>
+    <color name="brand_sky">#93C5FD</color>
+    <color name="brand_violet">#C4B5FD</color>
+</resources>
